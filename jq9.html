@@ -1,0 +1,33 @@
+ <html>
+    <head>
+        <title>Ejemplo de plugin con jQuery</title>
+
+        <!-- Incluimos la biblioteca jQuery, jBox y la hoja de estilos -->
+        <script src="jquery-2.1.1.min.js"></script>
+        <script src="jBox.min.js"></script>
+        <link href="jBox.css" rel="stylesheet">
+
+        <script>
+        $(function() {
+            // Añadimos ventanita con tooltip a todos los elementos de la clase "ayuda"
+            $('.ayuda').jBox('Tooltip');
+            // Al pinchar en el botón #enviar, se muestra una ventana
+            new jBox('Modal', { width: 300, height: 200, attach: $('#enviar'), title: 'Envío de datos al servidor', animation: "slide", content: '<em>Se va a proceder al envío de datos al servidor</em>' });
+            // Al pinchar en el botón #limpiar, se muestra un mensaje
+            $("#limpiar").click( function () {
+                new jBox('Notice', {color: "blue",content: 'Se restauraron los valores por defecto'});
+            });
+
+        });
+        </script>
+    </head>
+
+    <body>
+        <h1>Ejemplo de uso del plugin jBox</h1>
+            <form action="javascript: return false;">
+                Nombre: <input type="text" value="" class="ayuda" title="Introduzca su nombre" id="nombre">
+               <input type="submit" value="Enviar" id="enviar">
+                <input type="reset" value="Limpiar" id="limpiar">
+            </form>
+    </body>
+</html>

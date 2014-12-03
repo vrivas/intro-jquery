@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <style>
+            p {
+                border: 1px solid blue;
+            }
+        </style>
+        <script src="jquery-2.1.1.min.js"></script>
+        <script>
+            function reducir() {
+                $('p').animate({'margin-left': '-=20%', 'font-size': '-=30pt', 'border-width': '0px'}, 1000);
+            }
+
+            function agrandar() {
+                $('p').animate({'margin-left': '+=20%', 'font-size': '+=30pt', 'border-width': '+=45px'}, 3000);
+            }
+
+            $(function () {
+                agrandar();
+                reducir();
+            });
+        </script>
+    <body>
+        <h1>Ejemplo de Animate</h1>
+        <!-- Por favor: léase usando la correspondiente musiquilla de José Luis Rodríguez, "el puma" -->
+        <p>Viva la, viva la, viva la ampliación</p>
+        <p>Soy un párrafo que me agrando, y luego aplico una reducción</p>
+    </body>
+</html>
